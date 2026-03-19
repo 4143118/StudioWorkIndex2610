@@ -1,6 +1,9 @@
 // find our elements
 const stageContainer = document.getElementById("stage-container");
 const circleButton = document.getElementById("circle-button");
+const changeRed = document.getElementById("change-red");
+const changeCornflower = document.getElementById("change-cornflower");
+const changeGreenyellow = document.getElementById("change-greenyellow");
 // find stage width
 let stageContainerWidth = stageContainer.offsetWidth;
 //console.log(stageContainerWidth);
@@ -32,9 +35,27 @@ function drawNewCircle() {
         radius: 50 * Math.random(),
         fill: circleColour
     });
-    console.log(circle);
+    //console.log(circle);
     // add the circle to our first layer
     firstLayer.add(circle);
 }
 
 circleButton.addEventListener("click", drawNewCircle);
+
+//changing our circle colour
+//I chose radio buttons because they allow for a exclusive selection, making user choice
+// limited but certain. A constricted amount of user choice leads to a tighter colour palette.
+// to change my colour, I need to find the value of the imput clicked, and then update the
+// circle colour const.
+
+function changeColourRadio(clickEvent){
+    // find the value of whichever of the radio buttons was clicked
+    let newColour = clickEvent.target.value;
+    // set the new circle colour to that value
+    circleColour = newColour;
+}
+
+// add eventlistners
+//changeRed.addEventListener("click", changeColourRadio);
+changeCornflower.addEventListener("click", changeColourRadio);
+changeGreenyellow.addEventListener("click", changeColourRadio);
