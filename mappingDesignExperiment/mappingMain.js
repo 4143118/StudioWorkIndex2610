@@ -35,7 +35,7 @@ function drawNewCircle() {
         radius: 50 * Math.random(),
         fill: circleColour
     });
-    //console.log(circle);
+    //console.log(circle); I disabled all of my Chrome extensions, and the error was solved, so I do not need this line.
     // add the circle to our first layer
     firstLayer.add(circle);
 }
@@ -43,7 +43,7 @@ function drawNewCircle() {
 circleButton.addEventListener("click", drawNewCircle);
 
 //changing our circle colour
-//I chose radio buttons because they allow for a exclusive selection, making user choice
+//I chose radio buttons because they allow for an exclusive selection, making user choice
 // limited but certain. A constricted amount of user choice leads to a tighter colour palette.
 // to change my colour, I need to find the value of the imput clicked, and then update the
 // circle colour const.
@@ -56,6 +56,6 @@ function changeColourRadio(clickEvent){
 }
 
 // add eventlistners
-//changeRed.addEventListener("click", changeColourRadio);
+changeRed.addEventListener("click", changeColourRadio);
 changeCornflower.addEventListener("click", changeColourRadio);
 changeGreenyellow.addEventListener("click", changeColourRadio);
