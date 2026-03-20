@@ -1,0 +1,9 @@
+/* Add a transition on the button when it be clicked. Give it an animation to increate the feedback. */
+body {
+    transition: background-color 2s linear;
+}
+
+/* The origin version we did in class is no-drop, but that was so weired, so I changed it to pointer, make more sense.*/
+#play-button:hover {
+    cursor: pointer;
+}
