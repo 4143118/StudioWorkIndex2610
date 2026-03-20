@@ -48,7 +48,8 @@ dialog[open] {
     align-items: center;
     gap: 1rem;
 }
-
+/* Give a style to our slider container which contains control strips and information signs. It can make everything
+   is in the center, more easy for sight following. */
 .sliderContainer {
     display: flex;
     flex-direction: column;
@@ -70,6 +71,8 @@ input[type="range"]:focus {
     outline: none;
 }
 
+/* I changed colours both of the track and the thumb, using the same warm colour to keep harmony. */
+/* But I kept the focus circle's colour which can make the thumb become more readable.  */
 /******** Chrome, Safari, Opera and Edge Chromium styles ********/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
