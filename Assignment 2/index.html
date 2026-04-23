@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All ABOUT A2</title>
+<!--    To keep a harmony style, I chose the same style from assignment 1-->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../reset.css">
+</head>
+<body>
+    <h1>This is my assignment 2 page</h1>
+<!--    Create a section for conceptual responses.-->
+    <section>
+        <h2>Conceptual Responses</h2>
+        <p>
+            This project is an interactive expressive tool situated within the context of digital wellbeing and meditation.
+            In today’s digital environment, users are often immersed in digital information overload, which can lead to
+            feelings of anxiety and restlessness. Against this backdrop, this project explores how interaction design can
+            influence users’ emotional experiences by visualising their breathing.
+        </p>
+        <p>
+            In terms of interaction design principles, this project revolves around Mapping and Feedback. Mapping is
+            reflected in the direct correspondence between user actions and the system’s visual changes. When users press
+            and hold the mouse, the elements expand like an inhale; when users release it, they disperse into particles
+            like an exhale. This mapping is based on the physiological rhythm of breathing, making the interaction.
+            Feedback is reflected in the website’s immediate visual response to every user action. Continuous and smooth
+            animation changes allow users to clearly perceive the impact of their actions, thereby maintaining focus and
+            engagement.
+        </p>
+        <p>
+            Unlike traditional meditation or other relaxation tools, which rely on passive guidance, this project emphasises
+            active participation. Users control the system on them own thoughts through simple mouse actions. The system
+            responds with real-time visual feedback, creating a two-way interaction. The goal is not just relaxation.
+            It explores how bodily actions can be translated into digital feedback, and how this process can increase users’
+            awareness of their own state.
+        </p>
+        <p>
+            In the initial concept, exhale was represented by keeping the mouse still. However, during prototyping and
+            testing, this approach caused problems in both usability and implementation. “Stillness” was not intuitive,
+            and users found it hard to understand. It was also technically difficult to implement. To address this, the
+            design was changed so that releasing the mouse triggers exhale. This creates a clearer mapping and makes the
+            interaction more natural and intuitive.
+        </p>
+        <p>
+            Therefore, the novelty of this project lies in translating breathing into digital interaction. It turns a physical
+            rhythm into visual feedback that helps users become more aware of their own state. It also shifts meditation
+            from passive relaxation to active expression. The project balances concept and usability, working both as a
+            calming tool and an experimental exploration of embodied interaction.
+        </p>
+    </section>
+
+<!--    Create a section for technical approach.-->
+    <section>
+        <h2>Technical Approach</h2>
+        <p>
+            This project is built by using HTML, CSS, and JavaScript, with the HTML canvas element as the main rendering
+            surface. The canvas acts as a drawing area where graphics are rendered using JavaScript. The project gets its
+            2D rendering context through “2d” getContext (see main.js, lines 6–7), which is used for all subsequent
+            drawing operations.
+        </p>
+        <p>
+            To create animation, the project uses requestAnimationFrame() to drive the animation loop (see main.js, lines
+            139–174). This function is called on every frame. At the start of each frame, ctx.clearRect() is used to clear
+            the entire canvas (see main.js, line 142), and all elements are then redrawn in their updated states, producing
+            a smooth and continuous animation.
+        </p>
+        <p>
+            The core interaction logic revolves around two visual elements: rings and particles. A Ring class defines the
+            behaviour of each circle (see main.js, lines 35–57), storing its position, radius, and expansion state. In
+            the animate() loop, each ring updates its size and state, and is then drawn to the canvas (see main.js, lines
+            43–55). When the mouse is pressed, the mousedown event sets inhaling to true (see main.js, lines 67–69). A
+            frame counter ringTimer increases (see main.js, line 144), and every 15 frames a new ring is added to the rings
+            array (see main.js, lines 149–151), controlling how often rings appear. When the mouse is released, the mouseup
+            event ends the inhale state and stops the rings from expanding (see main.js, lines 72–77). Each ring is then
+            converted into particles by calculating evenly spaced points along its circumference using Math.cos and Math.sin
+            (see main.js, lines 86–90). Particles are created at these points with outward velocity (see main.js, lines 94–97).
+            All particles are assigned a batch ID currentBatch (see main.js, line 31) to distinguish groups from different
+            exhale actions.
+        </p>
+        <p>
+            In addition, the project includes three keyboard interactions. They are pressing R clears all content on the
+            canvas, pressing Space pauses or resumes the movement of the current batch of particles, and pressing Q permanently
+            freezes all particles. The difference between Space and Q comes from testing, users sometimes miss the timing
+            to pause with Space, so Q was added as a more reliable alternative. And this is also the reason for creating
+            batches of particles.
+        </p>
+        <p>
+            Finally, the project uses the resizeCanvas() function to listen for the browser’s resize event (see main.js,
+            lines 181–189), updating the canvas width and height to match the window size (see main.js, lines 181–184)
+            so it always fills the screen.
+        </p>
+        <p>
+            <a href="https://github.com/4143118/myProject" target="_blank">Link to my prototype codebase</a>
+        </p>
+    </section>
+
+<!--    Live link to my project prototype-->
+    <section>
+        <h2>Link to Project Prototype</h2>
+        <a href="https://breathtrack.netlify.app/" target="_blank">myProject Prototype</a>
+    </section>
+
+<!--    Live link to my peer user testing form-->
+    <section>
+        <h2>Link to Peer User Testing Form</h2>
+        <p>
+            <a href="https://forms.cloud.microsoft/r/KRBYuRaPmd" target="_blank">Peer
+                User Testing Form</a>
+        </p>
+        <p>
+            <a href="https://forms.cloud.microsoft/Pages/AnalysisPage.aspx?AnalyzerToken=Rvmb5s6uuokBdHCdhoudLReUky3tNfzT
+            &id=cTYy0b7NF0S01L2yS1Exa0y0NyN3a85NuomhqskYCv5UQUhaTEJNRlg1REEwUjg5VkFSRkFLMzdUSy4u" target="_blank">Peer
+            User Testing Responses Summary Page</a>
+        </p>
+    </section>
+
+<!--    Live link to respond summary page-->
+
+
+<!--    Create a section for reflection.-->
+    <section>
+        <h2>Peer User Testing Reflection</h2>
+        <p>
+
+        </p>
+    </section>
+
+<!--    Create a section for timeline.-->
+    <section>
+        <h2>Project Timeline</h2>
+    </section>
+</body>
+</html>
