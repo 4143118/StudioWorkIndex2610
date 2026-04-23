@@ -1,0 +1,70 @@
+/* I chose those warm colours for achieving a feeling of warm and safe, and keeping readability. */
+body{
+    background-color: rgb(255, 234, 204);
+    color: rgb(69, 24, 4);
+}
+
+/*The vertical timeline*/
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+/* The ruler */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Each container */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* Left & right container */
+.container.left {
+    left: 0;
+}
+
+.container.right {
+    left: 50%;
+}
+
+/* content box */
+.content {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* circles */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: orange;
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+}
+
+/*make all the circles are in the same line*/
+.container.left::after {
+    right: 0;
+    transform: translate(50%, 0);
+}
+
+.container.right::after {
+    left: 0;
+    transform: translate(-50%, 0);
+}
